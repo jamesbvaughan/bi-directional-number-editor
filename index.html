@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bi-directional Number Editor Demo</title>
+  </head>
+  <body>
+    <h1>Bi-directional Number Editor Demo</h1>
+    <input id="slider" type="range" min="0" max="100" step="1" />
+    <div>
+      Current Value:
+      <span id="valueSpan"></span>
+    </div>
+    <script>
+      const ws = new WebSocket(`ws://${location.host}/socket`);
+
+      ws.addEventListener("message", ({ data }) => {
+        const value = JSON.parse(data).value;
+        slider.value = value;
+        valueSpan.textContent = value;
+      });
+
+      slider.addEventListener("input", () => {
+        const value = parseInt(slider.value);
+        valueSpan.textContent = value;
+        ws.send(JSON.stringify({ value }));
+      });
+    </script>
+  </body>
+</html>

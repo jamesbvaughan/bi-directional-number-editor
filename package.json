@@ -1,0 +1,13 @@
+{
+  "name": "bdne",
+  "author": "James Vaughan <james@jamesbvaughan.com>",
+  "private": true,
+  "dependencies": {
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  }
+}
