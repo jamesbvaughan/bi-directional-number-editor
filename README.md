@@ -25,7 +25,7 @@ web client over HTTP and communicates with the web client over a WebSocket.
 └───────────────┘         └──────────────┘           └───────┘
 ```
 
-## How to try it out?
+## How to try it out
 
 Here's the config I'm using for Neovim:
 
