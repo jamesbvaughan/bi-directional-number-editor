@@ -3,6 +3,8 @@
 This repo contains a demonstration of bidirectional editing between a text
 document and a web interface, facilitated by an LSP server.
 
+[Blog post with more info](https://jamesbvaughan.com/bidirectional-editing/)
+
 ![demo screen recording](demo.gif)
 
 It was inspired by [Kevin Lynagh's updates on his work on
