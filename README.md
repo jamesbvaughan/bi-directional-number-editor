@@ -27,6 +27,14 @@ web client over HTTP and communicates with the web client over a WebSocket.
 └───────────────┘         └──────────────┘           └───────┘
 ```
 
+The language server expects a file whose entire contents are a single number.
+
+This keeps things incredibly simple for this demo because I'm just reading and
+writing the entire file for each change, but language servers are capable of
+much more structured and targeted editing.
+It's easy to imagine a more complex language where the values relate to
+parameters in a CAD model that can be manipulated in either direction like this.
+
 ## How to try it out
 
 Here's the config I'm using for Neovim:
