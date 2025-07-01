@@ -24,3 +24,36 @@ web client over HTTP and communicates with the web client over a WebSocket.
 │               │         │              │ WebSocket │       │
 └───────────────┘         └──────────────┘           └───────┘
 ```
+
+## How to try it out?
+
+Here's the config I'm using for Neovim:
+
+```lua
+local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
+
+-- Tell Neovim how to use this server
+configs.bdne = {
+    default_config = {
+        cmd = { "bun", "/Users/james/code/bdne/lsp-server.ts", "--stdio" },
+        filetypes = { "bdne" },
+        root_dir = function()
+            return vim.loop.cwd()
+        end,
+    },
+}
+
+-- Tell Neovim to use this server
+lspconfig.bdne.setup({})
+
+-- Add a "bdne" filetype for *.bdne files
+vim.filetype.add({
+	extension = {
+		bdne = "bdne",
+	},
+})
+```
+
+I'm not familiar with the LSP clients in other editors, but I'd expect something
+similar to be necessary.
